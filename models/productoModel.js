@@ -25,12 +25,20 @@ const productoSchema = mongoose.Schema({
         type:Number,
         required:true,
     },
-    imagenesSoloProducto:{
+    imagenesPorColor:{
+        type: mongoose.Schema.Types.Mixed,
+        required:true,
+    },
+    coloresProducto:{
         type: [String],
         required:true,
     },
-    imagenesSoloModelo:{
-        type: [String],
+    genero:{
+        type:String,
+        required:true,
+    },
+    tipo:{
+        type:String,
         required:true,
     }
 
@@ -38,5 +46,5 @@ const productoSchema = mongoose.Schema({
     timestamps:true,
 })
 
-const Producto = mongoose.model('Prodcuto',productoSchema);
+const Producto = mongoose.model('Producto',productoSchema);
 export default Producto;
