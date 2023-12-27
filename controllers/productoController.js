@@ -5,7 +5,7 @@ const nuevoProducto = async (req,res) => {
 
     const { marca,nombre,descripcion,precio,sku,stock,genero,tipo } = req.body;
 
-    const coloresProducto = ["Verde", "Marron", "Azul", "Beige", "Gris", "Blanco", "Rojo", "Amarillo"];
+    const coloresProducto = ["Verde", "Marron", "Azul", "Beige", "Gris", "Blanco", "Rojo", "Amarillo","Negro"];
 
     const arregloColorsProducto = [];
 
@@ -24,7 +24,7 @@ const nuevoProducto = async (req,res) => {
         }
     })
 
-    const producto = new Producto({marca,nombre,descripcion,precio,sku,stock,imagenesPorColor:arregloColorsProducto,coloresProducto:coloresActualesDelProducto,genero,tipo});
+    const producto = new Producto({marca,nombre,descripcion,precio,stock,imagenesPorColor:arregloColorsProducto,coloresProducto:coloresActualesDelProducto,genero,tipo});
 
     await producto.save();
     
@@ -32,5 +32,5 @@ const nuevoProducto = async (req,res) => {
 }
 
 export{
-    nuevoProducto,
+    nuevoProducto
 }

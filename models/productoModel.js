@@ -11,7 +11,6 @@ const productoSchema = mongoose.Schema({
     },
     descripcion:{
         type:String,
-        required:true,
     },
     precio:{
         type:Number,
@@ -19,7 +18,7 @@ const productoSchema = mongoose.Schema({
     },
     sku:{
         type:String,
-        required:true,
+        default:Math.random().toString(32).slice(2,13).toUpperCase(),
     },
     stock:{
         type:Number,
